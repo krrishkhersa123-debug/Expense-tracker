@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Expense Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>p
+</head>
+<body>
+
+  <!-- ───────────────────────────────────────────
+       SECTION 1 · HEADER
+  ─────────────────────────────────────────────-->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-badge">💰</div>
+      <div>
+        <h1 class="header-title">My Expense Tracker</h1>
+        <p class="header-subtitle">Track your monthly spending</p>
+      </div>
+    </div>
+    <div class="header-month">May 2026</div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ───────────────────────────────────────────
+         SECTION 2 · SUMMARY CARDS
+    ─────────────────────────────────────────────-->
+    <section class="section">
+      <h2 class="section-title">Overview</h2>
+
+      <div class="cards-row">
+
+        <div class="card card--accent">
+          <span class="card-icon">💸</span>
+          <span class="card-label">Total Spent</span>
+          <span class="card-value">₹18,450</span>
+          <span class="card-note">+12% vs last month</span>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">🏆</span>
+          <span class="card-label">Highest Category</span>
+          <span class="card-value">Shopping</span>
+          <span class="card-note">₹5,200 this month</span>
+        </div>
+
+        <div class="card">
+          <span class="card-icon">📅</span>
+          <span class="card-label">Current Month</span>
+          <span class="card-value">May 2026</span>
+          <span class="card-note">21 days tracked</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────
+         SECTION 3 · EXPENSE CATEGORIES
+    ─────────────────────────────────────────────-->
+    <section class="section">
+      <h2 class="section-title">Categories</h2>
+
+      <div class="category-list">
+
+        <div class="category-item">
+          <div class="category-left">
+            <span class="category-dot dot--food"></span>
+            <span class="category-name">🍔 Food</span>
+          </div>
+          <div class="category-right">
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 72%"></div>
+            </div>
+            <span class="category-amount">₹4,800</span>
+          </div>
+        </div>
+
+        <div class="category-item">
+          <div class="category-left">
+            <span class="category-dot dot--transport"></span>
+            <span class="category-name">🚌 Transport</span>
+          </div>
+          <div class="category-right">
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 40%"></div>
+            </div>
+            <span class="category-amount">₹2,650</span>
+          </div>
+        </div>
+
+        <div class="category-item">
+          <div class="category-left">
+            <span class="category-dot dot--shopping"></span>
+            <span class="category-name">🛍️ Shopping</span>
+          </div>
+          <div class="category-right">
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 88%"></div>
+            </div>
+            <span class="category-amount">₹5,200</span>
+          </div>
+        </div>
+
+        <div class="category-item">
+          <div class="category-left">
+            <span class="category-dot dot--entertainment"></span>
+            <span class="category-name">🎬 Entertainment</span>
+          </div>
+          <div class="category-right">
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 55%"></div>
+            </div>
+            <span class="category-amount">₹3,600</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────────────
+         SECTION 4 · RECENT TRANSACTIONS
+    ─────────────────────────────────────────────-->
+    <section class="section">
+      <h2 class="section-title">Recent Transactions</h2>
+
+      <div class="transactions-list">
+
+        <div class="transaction-card">
+          <div class="txn-icon">🍕</div>
+          <div class="txn-details">
+            <span class="txn-title">Pizza Palace</span>
+            <span class="txn-date">10 May 2026</span>
+          </div>
+          <span class="txn-amount txn-amount--debit">- ₹420</span>
+        </div>
+
+        <div class="transaction-card">
+          <div class="txn-icon">🚕</div>
+          <div class="txn-details">
+            <span class="txn-title">Ola Cab Ride</span>
+            <span class="txn-date">9 May 2026</span>
+          </div>
+          <span class="txn-amount txn-amount--debit">- ₹180</span>
+        </div>
+
+        <div class="transaction-card">
+          <div class="txn-icon">🛒</div>
+          <div class="txn-details">
+            <span class="txn-title">Amazon Order</span>
+            <span class="txn-date">8 May 2026</span>
+          </div>
+          <span class="txn-amount txn-amount--debit">- ₹1,299</span>
+        </div>
+
+        <div class="transaction-card">
+          <div class="txn-icon">🎟️</div>
+          <div class="txn-details">
+            <span class="txn-title">BookMyShow Tickets</span>
+            <span class="txn-date">7 May 2026</span>
+          </div>
+          <span class="txn-amount txn-amount--debit">- ₹600</span>
+        </div>
+
+        <div class="transaction-card">
+          <div class="txn-icon">☕</div>
+          <div class="txn-details">
+            <span class="txn-title">Café Coffee Day</span>
+            <span class="txn-date">6 May 2026</span>
+          </div>
+          <span class="txn-amount txn-amount--debit">- ₹240</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Personal Expense Tracker &copy; 2026 &mdash; Built with HTML &amp; CSS</p>
+  </footer>
+
+</body>
+</html>

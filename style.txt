@@ -1,0 +1,388 @@
+*, *::before, *::after {
+  box-sizing: border-box;   /* Box Model: padding & border included in width */
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream:      #fdf6ec;
+  --ink:        #1a1a2e;
+  --ink-light:  #4a4a6a;
+  --accent:     #e8572a;
+  --accent-2:   #f0a500;
+  --white:      #ffffff;
+  --border:     #e5ddd0;
+  --card-bg:    #ffffff;
+  --shadow:     0 2px 16px rgba(26,26,46,0.08);
+  --radius:     14px;
+
+  /* Category bar colors */
+  --food-color:    #e8572a;
+  --trans-color:   #3a86ff;
+  --shop-color:    #f0a500;
+  --ent-color:     #7b5ea7;
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+/* 
+   BASE STYLES
+    */
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  /* Box Model: body fills full viewport height */
+}
+
+/* 
+   SECTION 1 · HEADER
+  */
+.site-header {
+  background-color: var(--ink);
+  color: var(--white);
+
+  /* Box Model: padding adds space inside the header */
+  padding: 28px 40px;
+
+  /* Flexbox: header-inner and month on opposite ends */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-inner {
+  /* Flexbox: badge and title text side-by-side */
+  display: flex;
+  align-items: center;
+  gap: 16px;           /* space between flex children */
+}
+
+.header-badge {
+  /* Box Model: equal padding on all sides = circle feel */
+  padding: 12px;
+  background-color: var(--accent);
+  border-radius: 12px;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.header-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+
+  /* Box Model: small bottom margin to separate from subtitle */
+  margin-bottom: 4px;
+}
+
+.header-subtitle {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.55);
+}
+
+.header-month {
+  /* Box Model: padding + border creates a pill badge */
+  padding: 8px 18px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.8);
+}
+
+/* 
+   MAIN LAYOUT
+   */
+.main-content {
+  /* Box Model: max-width centers content; auto margin = center */
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 24px;
+
+  /* Flexbox: stacks sections vertically with gap */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* 
+   SECTION WRAPPER
+   */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--ink-light);
+  letter-spacing: 0.01em;
+
+  /* Box Model: padding-bottom + border = visual underline */
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid var(--border);
+}
+
+/* 
+   SECTION 2 · SUMMARY CARDS
+    */
+.cards-row {
+  /* Flexbox: three cards in one horizontal row */
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.card {
+  /* Flexbox: content inside card stacks vertically */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  /* Box Model: flex:1 makes all cards equal width */
+  flex: 1;
+
+  /* Box Model: padding adds breathing room inside */
+  padding: 24px 20px;
+
+  /* Box Model: border wraps the card visually */
+  border: 1.5px solid var(--border);
+
+  /* Box Model: border-radius rounds the corners */
+  border-radius: var(--radius);
+
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+/* Highlighted / accent card */
+.card--accent {
+  background-color: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  /* Box Model: margin-bottom pushes label down */
+  margin-bottom: 6px;
+}
+
+.card-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-light);
+}
+
+.card--accent .card-label {
+  color: rgba(255,255,255,0.5);
+}
+
+.card-value {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+.card-note {
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+
+.card--accent .card-note {
+  color: rgba(255,255,255,0.55);
+}
+
+/* 
+   SECTION 3 · EXPENSE CATEGORIES
+    */
+.category-list {
+  display: flex;
+  flex-direction: column;   /* stacks each row vertically */
+  gap: 0;
+
+  background-color: var(--card-bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.category-item {
+  /* Flexbox: name on left, bar+amount on right */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Box Model: padding gives each row height & breathing room */
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.category-item:last-child {
+  border-bottom: none;
+}
+
+.category-left {
+  /* Flexbox: dot + name side by side */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 160px;   /* fixed width so all bars align */
+}
+
+.category-dot {
+  /* Box Model: width + height + border-radius = circle */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot--food          { background-color: var(--food-color); }
+.dot--transport     { background-color: var(--trans-color); }
+.dot--shopping      { background-color: var(--shop-color); }
+.dot--entertainment { background-color: var(--ent-color); }
+
+.category-name {
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.category-right {
+  /* Flexbox: bar track and amount side by side */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* Progress bar track */
+.bar-track {
+  /* Box Model: fixed width + height defines bar size */
+  width: 160px;
+  height: 8px;
+  background-color: var(--border);
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+/* Colored fill — width set inline per item */
+.bar-fill {
+  height: 100%;
+  border-radius: 40px;
+  background-color: var(--accent);
+}
+
+.category-amount {
+  font-size: 0.92rem;
+  font-weight: 600;
+  min-width: 70px;
+  text-align: right;
+}
+
+/* 
+   SECTION 4 · RECENT TRANSACTIONS
+   */
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.transaction-card {
+  /* Flexbox: icon | details | amount in one row */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  /* Box Model: padding, border, border-radius = card shape */
+  padding: 16px 20px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.txn-icon {
+  /* Box Model: equal padding on all sides = square badge */
+  padding: 10px;
+  background-color: var(--cream);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.txn-details {
+  /* Flexbox: title and date stacked vertically */
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;            /* takes remaining space, pushes amount right */
+}
+
+.txn-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.txn-date {
+  font-size: 0.78rem;
+  color: var(--ink-light);
+}
+
+.txn-amount {
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.txn-amount--debit  { color: var(--accent); }
+.txn-amount--credit { color: #2ecc71; }
+
+/* 
+   FOOTER
+  */
+.site-footer {
+  text-align: center;
+  /* Box Model: padding separates text from edge */
+  padding: 24px 40px;
+  border-top: 1.5px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--ink-light);
+}
+
+/* 
+   RESPONSIVE — NARROW SCREENS
+    */
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .cards-row {
+    flex-direction: column;   /* stack cards vertically on mobile */
+  }
+
+  .bar-track {
+    width: 100px;
+  }
+
+  .category-left {
+    flex: 0 0 130px;
+  }
+}
